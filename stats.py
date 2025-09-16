@@ -13,3 +13,15 @@ def count_of_characters(text):
             no_of_letters[character] += 1
     
     return no_of_letters
+
+def sort_dict(dictionary):
+    new_dict_list = []
+
+    for k, v in dictionary.items():
+        if k.isalpha():
+            new_dict_list.append({"char": k, "num": v})
+    new_dict_list.sort(reverse=True, key=sort_on)
+    return new_dict_list
+
+def sort_on(items):
+    return items["num"]
