@@ -1,11 +1,15 @@
-from stats import number_of_words, count_of_characters, sort_dict
+from stats import (
+    number_of_words, 
+    get_chars_dict, 
+    chars_dict_to_sorted_list,
+)
 
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
     num_words = number_of_words(text)
-    character_list = count_of_characters(text)
-    isalpha_character_count = sort_dict(character_list)
+    character_list = get_chars_dict(text)
+    isalpha_character_count = chars_dict_to_sorted_list(character_list)
 
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {book_path}...")

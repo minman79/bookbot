@@ -2,26 +2,28 @@ def number_of_words(text):
     words = text.split()
     return len(words)
 
-def count_of_characters(text):
-    no_of_letters = {}
-    list_of_characters = list(text.lower())
 
-    for character in list_of_characters:
-        if character not in no_of_letters:
-            no_of_letters[character] = 1
+def get_chars_dict(text):
+    chars = {}
+    lowered_text = list(text.lower())
+    for character in lowered_text:
+        if character not in chars:
+            chars[character] = 1
         else:
-            no_of_letters[character] += 1
-    
-    return no_of_letters
+            chars[character] += 1
+    return chars
 
-def sort_dict(dictionary):
-    new_dict_list = []
 
-    for k, v in dictionary.items():
+def sort_on(d):
+    return d["num"]
+
+
+def chars_dict_to_sorted_list(num_chars_dict):
+    sorted_list = []
+    for k, v in num_chars_dict.items():
         if k.isalpha():
-            new_dict_list.append({"char": k, "num": v})
-    new_dict_list.sort(reverse=True, key=sort_on)
-    return new_dict_list
+            sorted_list.append({"char": k, "num": v})
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
 
-def sort_on(items):
-    return items["num"]
+
