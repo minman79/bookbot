@@ -12,8 +12,8 @@ def main():
     print("----------- Word Count ----------")
     print(f"Found {num_words} total words")
     print("--------- Character Count -------")
-    for i in isalpha_character_count:
-        print(i["char"] + ": " + str(i["num"]))
+    for item in isalpha_character_count:
+        print(f"{item['char']}: {item['num']}")
     print("============= END ===============")
 
 
